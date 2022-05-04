@@ -1,0 +1,6 @@
+framework module Pods_f1_fan_app {
+  umbrella header "Pods-f1-fan-app-umbrella.h"
+
+  export *
+  module * { export * }
+}
