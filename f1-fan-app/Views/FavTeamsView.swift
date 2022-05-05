@@ -10,7 +10,6 @@ import SwiftUI
 struct FavTeamsView: View {
     
     @FetchRequest(sortDescriptors: []) var echipe_join: FetchedResults<Email_Echipa>
-    @FetchRequest(sortDescriptors: []) var echipe: FetchedResults<Echipa>
     @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
@@ -21,15 +20,26 @@ struct FavTeamsView: View {
                         Text(echipeJoin.nume_echipa ?? "idk")
                     }
                 }
+                
                 Button(action: {
                     viewModel.optiune = 5
                 }, label: {
-                    Text("Add a team")
-                        .foregroundColor(Color.white)
-                        .frame(width:200, height: 50)
-                        .cornerRadius(8)
-                        .background(Color.red)
-                })
+                            Text("Add a team")
+                                .foregroundColor(Color.white)
+                                .frame(width:200, height: 50)
+                                .cornerRadius(8)
+                                .background(Color.red)
+                        })
+                        Button(action: {
+                            viewModel.optiune = 6
+                        }, label: {
+                            Text("Remove a team")
+                                .foregroundColor(Color.white)
+                                .frame(width:200, height: 50)
+                                .cornerRadius(8)
+                                .background(Color.red)
+                        })
+                        
                 Button(action: {
                     viewModel.optiune = 0
                 }, label: {
@@ -40,6 +50,7 @@ struct FavTeamsView: View {
                         .background(Color.red)
                 })
             }.padding()
+                
             
         }.navigationTitle("Favourite Teams")
     }

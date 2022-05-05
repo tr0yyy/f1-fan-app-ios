@@ -12,9 +12,9 @@ import FirebaseAuth
 class AppViewModel: ObservableObject {
     
     let auth = Auth.auth()
-    
+
     @Published var optiune = 0
-    
+    @Published var notification: Bool = false
     @Published var signedIn = false
     
     var isSignedIn: Bool {
@@ -67,6 +67,7 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AppViewModel
     
     var body: some View {
+        
         NavigationView {
             if viewModel.signedIn {
                 if viewModel.optiune == 0 {
@@ -75,6 +76,8 @@ struct ContentView: View {
                     FavTeamsView()
                 } else if viewModel.optiune == 5{
                     AddFavTeamView()
+                } else if viewModel.optiune == 6{
+                    DelFavTeamView()
                 }
             }
             else {

@@ -14,7 +14,7 @@ struct MainMenuView: View {
                 VStack{
                     Text("Logged-in. Welcome to F1 Fan App")
                     Button(action: {
-                    viewModel.signOut()
+                        viewModel.optiune = 1
                     }, label: {
                         Text("Last race news")
                             .foregroundColor(Color.white)
@@ -23,7 +23,7 @@ struct MainMenuView: View {
                             .background(Color.red)
                     })
                     Button(action: {
-                    viewModel.signOut()
+                        viewModel.optiune = 2
                     }, label: {
                         Text("Next race news")
                             .foregroundColor(Color.white)
@@ -41,9 +41,18 @@ struct MainMenuView: View {
                             .background(Color.red)
                     })
                     Button(action: {
+                        viewModel.optiune = 4
+                    }, label: {
+                        Text("Settings")
+                            .foregroundColor(Color.white)
+                            .frame(width:200, height: 50)
+                            .cornerRadius(8)
+                            .background(Color.red)
+                    })
+                    Button(action: {
                     viewModel.signOut()
                     }, label: {
-                        Text("My favourite drivers")
+                        Text("Sign out")
                             .foregroundColor(Color.white)
                             .frame(width:200, height: 50)
                             .cornerRadius(8)
