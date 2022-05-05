@@ -18,7 +18,8 @@
 		B031D0B228232CB400C97CC4 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031D0B128232CB400C97CC4 /* MainMenuView.swift */; };
 		B031D0B428232D3000C97CC4 /* LastRaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031D0B328232D3000C97CC4 /* LastRaceView.swift */; };
 		B031D0B628232D3D00C97CC4 /* NextRaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031D0B528232D3D00C97CC4 /* NextRaceView.swift */; };
-		B0C164F02823CE1100160CDB /* InsertFavouriteTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C164EF2823CE1100160CDB /* InsertFavouriteTeamView.swift */; };
+		B0C164F32823DFCF00160CDB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C164F22823DFCF00160CDB /* DataController.swift */; };
+		B0C164F52823E40B00160CDB /* AddFavTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C164F42823E40B00160CDB /* AddFavTeamView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,8 @@
 		B031D0B128232CB400C97CC4 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		B031D0B328232D3000C97CC4 /* LastRaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRaceView.swift; sourceTree = "<group>"; };
 		B031D0B528232D3D00C97CC4 /* NextRaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextRaceView.swift; sourceTree = "<group>"; };
-		B0C164EF2823CE1100160CDB /* InsertFavouriteTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertFavouriteTeamView.swift; sourceTree = "<group>"; };
+		B0C164F22823DFCF00160CDB /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		B0C164F42823E40B00160CDB /* AddFavTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavTeamView.swift; sourceTree = "<group>"; };
 		DF0CCB43A05910FC6E2713A6 /* Pods-f1-fan-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-f1-fan-app.debug.xcconfig"; path = "Target Support Files/Pods-f1-fan-app/Pods-f1-fan-app.debug.xcconfig"; sourceTree = "<group>"; };
 		F36738A915EF95A00B4F1FF1 /* Pods_f1_fan_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_f1_fan_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,7 +118,7 @@
 				B031D0B528232D3D00C97CC4 /* NextRaceView.swift */,
 				B031D0B328232D3000C97CC4 /* LastRaceView.swift */,
 				B031D0B128232CB400C97CC4 /* MainMenuView.swift */,
-				B0C164EF2823CE1100160CDB /* InsertFavouriteTeamView.swift */,
+				B0C164F42823E40B00160CDB /* AddFavTeamView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -124,6 +126,7 @@
 		B0C164EE2823CD7A00160CDB /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
+				B0C164F22823DFCF00160CDB /* DataController.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -247,9 +250,10 @@
 				B031D0B228232CB400C97CC4 /* MainMenuView.swift in Sources */,
 				B031D0B428232D3000C97CC4 /* LastRaceView.swift in Sources */,
 				B031D0A628231C0200C97CC4 /* Persistence.swift in Sources */,
-				B0C164F02823CE1100160CDB /* InsertFavouriteTeamView.swift in Sources */,
+				B0C164F32823DFCF00160CDB /* DataController.swift in Sources */,
 				B031D09F28231C0100C97CC4 /* ContentView.swift in Sources */,
 				B031D0A928231C0200C97CC4 /* f1_fan_app.xcdatamodeld in Sources */,
+				B0C164F52823E40B00160CDB /* AddFavTeamView.swift in Sources */,
 				B031D09D28231C0100C97CC4 /* f1_fan_appApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
