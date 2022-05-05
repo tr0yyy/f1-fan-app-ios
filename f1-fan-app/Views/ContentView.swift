@@ -13,10 +13,19 @@ class AppViewModel: ObservableObject {
     
     let auth = Auth.auth()
     
+    @Published var optiune = 0
+    
     @Published var signedIn = false
     
     var isSignedIn: Bool {
         return auth.currentUser != nil
+    }
+    
+    var loggedEmail: String{
+        guard signedIn == true else {
+            return ""
+        }
+        return auth.currentUser?.email ?? ""
     }
     
     func signIn(email: String, password: String) {
@@ -60,19 +69,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             if viewModel.signedIn {
-                VStack{
-                    Text("Logged-in")
-                    Button(action: {
-                    viewModel.signOut()
-                    }, label: {
-                        Text("Sign out")
-                            .foregroundColor(Color.white)
-                            .frame(width:200, height: 50)
-                            .cornerRadius(8)
-                            .background(Color.red)
-                    })
+                if viewModel.optiune == 0 {
+                    MainMenuView()
+                } else if viewModel.optiune == 3 {
+                    FavTeamsView()
+                } else if viewModel.optiune == 5{
+                    AddFavTeamView()
                 }
-                
             }
             else {
                 SignInView()

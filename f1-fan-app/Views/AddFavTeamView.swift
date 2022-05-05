@@ -11,14 +11,15 @@ struct AddFavTeamView: View {
     
     @State var team = ""
     
+    @Environment(\.managedObjectContext) var moc
+    @EnvironmentObject var viewModel: AppViewModel
+    @FetchRequest(sortDescriptors: []) var echipe: FetchedResults<Email_Echipa>
+    
     var body: some View {
-        VStack {
-            Image("logo")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 150, height: 150)
-            
+
+        NavigationView{
             VStack{
+                
                 TextField("Team", text: $team)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
@@ -31,6 +32,19 @@ struct AddFavTeamView: View {
                         return
                     }
                     
+                    let teamToBeInserted = Email_Echipa(context: moc)
+                    teamToBeInserted.nume_echipa = team
+                    teamToBeInserted.email = viewModel.loggedEmail
+                    
+                    do{
+                    try moc.save()
+                    } catch let error as NSError {
+                        print("could nto save . \(error), \(error.userInfo)")
+                    }
+                    
+                    viewModel.optiune = 3
+                    
+                    
                 }, label: {
                     Text("Add the team")
                         .foregroundColor(Color.white)
@@ -38,10 +52,9 @@ struct AddFavTeamView: View {
                         .cornerRadius(8)
                         .background(Color.red)
                 })
-            }
-            .padding()
+            }.padding()
         }
-        .navigationTitle("Add a favourite team")
+        
     }
 }
 

@@ -10,7 +10,7 @@ import Firebase
 
 @main
 struct f1_fan_appApp: App {
-    let persistenceController = PersistenceController.shared
+    //et persistenceController = PersistenceController.shared
     @StateObject private var dataController = DataController()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 

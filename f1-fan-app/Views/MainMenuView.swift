@@ -8,8 +8,50 @@
 import SwiftUI
 
 struct MainMenuView: View {
+    @EnvironmentObject var viewModel: AppViewModel
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+                VStack{
+                    Text("Logged-in. Welcome to F1 Fan App")
+                    Button(action: {
+                    viewModel.signOut()
+                    }, label: {
+                        Text("Last race news")
+                            .foregroundColor(Color.white)
+                            .frame(width:200, height: 50)
+                            .cornerRadius(8)
+                            .background(Color.red)
+                    })
+                    Button(action: {
+                    viewModel.signOut()
+                    }, label: {
+                        Text("Next race news")
+                            .foregroundColor(Color.white)
+                            .frame(width:200, height: 50)
+                            .cornerRadius(8)
+                            .background(Color.red)
+                    })
+                    Button(action: {
+                        viewModel.optiune = 3
+                    }, label: {
+                        Text("My favourite teams")
+                            .foregroundColor(Color.white)
+                            .frame(width:200, height: 50)
+                            .cornerRadius(8)
+                            .background(Color.red)
+                    })
+                    Button(action: {
+                    viewModel.signOut()
+                    }, label: {
+                        Text("My favourite drivers")
+                            .foregroundColor(Color.white)
+                            .frame(width:200, height: 50)
+                            .cornerRadius(8)
+                            .background(Color.red)
+                    })
+                
+            }
+        }
     }
 }
 
