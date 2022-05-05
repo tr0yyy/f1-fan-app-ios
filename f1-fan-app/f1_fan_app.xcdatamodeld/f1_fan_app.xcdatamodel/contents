@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21D49" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Echipa" representedClassName="Echipa" syncable="YES" codeGenerationType="class">
+        <attribute name="campionate" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nume_echipa" optional="YES" attributeType="String"/>
+        <attribute name="tara_origine" optional="YES" attributeType="String"/>
+        <relationship name="fk_email_echipa" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Email_Echipa" inverseName="fk_echipa" inverseEntity="Email_Echipa"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="nume_echipa"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Email_Echipa" representedClassName="Email_Echipa" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="nume_echipa" optional="YES" attributeType="String"/>
+        <relationship name="fk_echipa" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Echipa" inverseName="fk_email_echipa" inverseEntity="Echipa"/>
+    </entity>
+    <entity name="Email_Pilot" representedClassName="Email_Pilot" syncable="YES" codeGenerationType="class">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="nume_pilot" optional="YES" attributeType="String"/>
+        <relationship name="fk_pilot_email" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pilot" inverseName="fk_pilot_echipa" inverseEntity="Pilot"/>
+    </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="Pilot" representedClassName="Pilot" syncable="YES" codeGenerationType="class">
+        <attribute name="campionate_castigate" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="nume_pilot" optional="YES" attributeType="String"/>
+        <attribute name="varsta" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="fk_pilot_echipa" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Email_Pilot" inverseName="fk_pilot_email" inverseEntity="Email_Pilot"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="nume_pilot"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <elements>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="Echipa" positionX="-54" positionY="0" width="128" height="89"/>
+        <element name="Pilot" positionX="-36" positionY="36" width="128" height="89"/>
+        <element name="Email_Echipa" positionX="-18" positionY="63" width="128" height="74"/>
+        <element name="Email_Pilot" positionX="0" positionY="72" width="128" height="74"/>
     </elements>
 </model>
