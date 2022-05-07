@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 import FirebaseAuth
+import UserNotifications
 
 class AppViewModel: ObservableObject {
     
@@ -80,6 +81,8 @@ struct ContentView: View {
                     DelFavTeamView()
                 } else if viewModel.optiune == 1{
                     LastRaceView()
+                } else if viewModel.optiune == 4{
+                    SettingsView()
                 }
             }
             else {
@@ -124,6 +127,20 @@ struct SignInView: View {
                         }
                         
                         viewModel.signIn(email: email, password: password)
+                        
+                        let content = UNMutableNotificationContent()
+                        content.title = "F1 Fan App"
+                        content.subtitle = "Logged-in"
+                        content.sound = UNNotificationSound.default
+
+                        // show this notification five seconds from now
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+
+                        // choose a random identifier
+                        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+
+                        // add our notification request
+                        UNUserNotificationCenter.current().add(request)
                         
                     }, label: {
                         Text("Sign in")

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MenuRow: View {
+struct MenuRow: View { /// as zice ca ar fi UiCollectionView
     var driver: Driver
     var body: some View {
         HStack{
@@ -21,6 +21,7 @@ struct MenuRow: View {
 
 //it's actually driver standings
 struct LastRaceView: View {
+    @EnvironmentObject var viewModel: AppViewModel
     
     var driverProvider = MetadataHandler()
     
@@ -31,6 +32,15 @@ struct LastRaceView: View {
                     MenuRow(driver: driver)
                 }
             }
+            Button(action: {
+                viewModel.optiune = 0
+            }, label: {
+                Text("Return")
+                    .foregroundColor(Color.white)
+                    .frame(width:200, height: 50)
+                    .cornerRadius(8)
+                    .background(Color.red)
+            })
         }.navigationTitle("Driver Standings")
     }
 }

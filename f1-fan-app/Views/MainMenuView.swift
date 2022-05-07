@@ -11,7 +11,7 @@ struct MainMenuView: View {
     @EnvironmentObject var viewModel: AppViewModel
     var body: some View {
         NavigationView {
-                VStack{
+                VStack{ /// navigation controllerul
                     Text("Logged-in. Welcome to F1 Fan App")
                     Button(action: {
                         viewModel.optiune = 1

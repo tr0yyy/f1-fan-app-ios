@@ -15,7 +15,7 @@ struct FavTeamsView: View {
     var body: some View {
         NavigationView{
             VStack {
-                List(echipe_join) { echipeJoin in
+                List(echipe_join) { echipeJoin in /// table view
                     if echipeJoin.email == viewModel.loggedEmail {
                         Text(echipeJoin.nume_echipa ?? "idk")
                     }
