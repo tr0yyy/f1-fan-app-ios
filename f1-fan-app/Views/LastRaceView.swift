@@ -7,9 +7,31 @@
 
 import SwiftUI
 
-struct LastRaceView: View {
+struct MenuRow: View {
+    var driver: Driver
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack{
+            Text(driver.name)
+            Text("-")
+            Text(driver.team)
+            Spacer()
+        }
+    }
+}
+
+//it's actually driver standings
+struct LastRaceView: View {
+    
+    var driverProvider = MetadataHandler()
+    
+    var body: some View {
+        NavigationView{
+            VStack{
+                List(driverProvider.getDriverStandings(), id: \.self) { driver in
+                    MenuRow(driver: driver)
+                }
+            }
+        }.navigationTitle("Driver Standings")
     }
 }
 

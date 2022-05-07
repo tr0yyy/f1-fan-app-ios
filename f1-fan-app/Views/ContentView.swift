@@ -78,6 +78,8 @@ struct ContentView: View {
                     AddFavTeamView()
                 } else if viewModel.optiune == 6{
                     DelFavTeamView()
+                } else if viewModel.optiune == 1{
+                    LastRaceView()
                 }
             }
             else {

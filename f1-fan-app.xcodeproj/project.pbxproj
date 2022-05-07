@@ -20,9 +20,9 @@
 		B031D0B0282321FB00C97CC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B031D0AF282321FB00C97CC4 /* GoogleService-Info.plist */; };
 		B031D0B228232CB400C97CC4 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031D0B128232CB400C97CC4 /* MainMenuView.swift */; };
 		B031D0B428232D3000C97CC4 /* LastRaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031D0B328232D3000C97CC4 /* LastRaceView.swift */; };
-		B031D0B628232D3D00C97CC4 /* NextRaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B031D0B528232D3D00C97CC4 /* NextRaceView.swift */; };
 		B0C164F32823DFCF00160CDB /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C164F22823DFCF00160CDB /* DataController.swift */; };
 		B0C164F52823E40B00160CDB /* AddFavTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C164F42823E40B00160CDB /* AddFavTeamView.swift */; };
+		B122B5962826FA1E00CDD165 /* MetadataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B122B5952826FA1E00CDD165 /* MetadataHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,9 +40,9 @@
 		B031D0AF282321FB00C97CC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B031D0B128232CB400C97CC4 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		B031D0B328232D3000C97CC4 /* LastRaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastRaceView.swift; sourceTree = "<group>"; };
-		B031D0B528232D3D00C97CC4 /* NextRaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextRaceView.swift; sourceTree = "<group>"; };
 		B0C164F22823DFCF00160CDB /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		B0C164F42823E40B00160CDB /* AddFavTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFavTeamView.swift; sourceTree = "<group>"; };
+		B122B5952826FA1E00CDD165 /* MetadataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataHandler.swift; sourceTree = "<group>"; };
 		DF0CCB43A05910FC6E2713A6 /* Pods-f1-fan-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-f1-fan-app.debug.xcconfig"; path = "Target Support Files/Pods-f1-fan-app/Pods-f1-fan-app.debug.xcconfig"; sourceTree = "<group>"; };
 		F36738A915EF95A00B4F1FF1 /* Pods_f1_fan_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_f1_fan_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -129,7 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				B031D09E28231C0100C97CC4 /* ContentView.swift */,
-				B031D0B528232D3D00C97CC4 /* NextRaceView.swift */,
 				B031D0B328232D3000C97CC4 /* LastRaceView.swift */,
 				B031D0B128232CB400C97CC4 /* MainMenuView.swift */,
 				B0C164F42823E40B00160CDB /* AddFavTeamView.swift */,
@@ -144,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				B0C164F22823DFCF00160CDB /* DataController.swift */,
+				B122B5952826FA1E00CDD165 /* MetadataHandler.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -263,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B031D0B628232D3D00C97CC4 /* NextRaceView.swift in Sources */,
 				B031D0B228232CB400C97CC4 /* MainMenuView.swift in Sources */,
 				B031D0B428232D3000C97CC4 /* LastRaceView.swift in Sources */,
 				115110502824214300E619EB /* DelFavTeamView.swift in Sources */,
@@ -273,6 +272,7 @@
 				B031D0A928231C0200C97CC4 /* f1_fan_app.xcdatamodeld in Sources */,
 				1151104E282415C100E619EB /* FavTeamsView.swift in Sources */,
 				11511052282425C900E619EB /* SettingsView.swift in Sources */,
+				B122B5962826FA1E00CDD165 /* MetadataHandler.swift in Sources */,
 				B0C164F52823E40B00160CDB /* AddFavTeamView.swift in Sources */,
 				B031D09D28231C0100C97CC4 /* f1_fan_appApp.swift in Sources */,
 			);

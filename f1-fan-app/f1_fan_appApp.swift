@@ -12,6 +12,7 @@ import Firebase
 struct f1_fan_appApp: App {
     //et persistenceController = PersistenceController.shared
     @StateObject private var dataController = DataController()
+    @StateObject private var metadataHandler = MetadataHandler()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     

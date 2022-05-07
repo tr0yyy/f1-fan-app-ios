@@ -16,7 +16,7 @@ struct MainMenuView: View {
                     Button(action: {
                         viewModel.optiune = 1
                     }, label: {
-                        Text("Last race news")
+                        Text("Driver Standings using API")
                             .foregroundColor(Color.white)
                             .frame(width:200, height: 50)
                             .cornerRadius(8)
