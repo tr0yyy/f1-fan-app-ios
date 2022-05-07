@@ -23,15 +23,6 @@ struct MainMenuView: View {
                             .background(Color.red)
                     })
                     Button(action: {
-                        viewModel.optiune = 2
-                    }, label: {
-                        Text("Next race news")
-                            .foregroundColor(Color.white)
-                            .frame(width:200, height: 50)
-                            .cornerRadius(8)
-                            .background(Color.red)
-                    })
-                    Button(action: {
                         viewModel.optiune = 3
                     }, label: {
                         Text("My favourite teams")
@@ -60,7 +51,7 @@ struct MainMenuView: View {
                     })
                 
             }
-        }
+        }.navigationTitle("Main Menu")
     }
 }
 

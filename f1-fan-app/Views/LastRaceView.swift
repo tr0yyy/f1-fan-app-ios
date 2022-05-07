@@ -28,19 +28,21 @@ struct LastRaceView: View {
     var body: some View {
         NavigationView{
             VStack{
+                Button(action: {
+                    viewModel.optiune = 0
+                }, label: {
+                    Text("Return")
+                        .foregroundColor(Color.white)
+                        .frame(width:200, height: 50)
+                        .cornerRadius(8)
+                        .background(Color.red)
+                }).padding()
                 List(driverProvider.getDriverStandings(), id: \.self) { driver in
                     MenuRow(driver: driver)
                 }
+                Spacer()
             }
-            Button(action: {
-                viewModel.optiune = 0
-            }, label: {
-                Text("Return")
-                    .foregroundColor(Color.white)
-                    .frame(width:200, height: 50)
-                    .cornerRadius(8)
-                    .background(Color.red)
-            })
+
         }.navigationTitle("Driver Standings")
     }
 }
